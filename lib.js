@@ -1,15 +1,15 @@
 /*
 RESOURCES:
 ===== 
-DEPS
-. ytdl-core - YT dl util. Seems to do everything I want no?
-. fluent-ffmpeg - some video library
-. progress-stream - progress tracker (for prog bar)
-. some kinda queue system (async)
-. https://www.npmjs.com/package/node-lame - for audio encoding??
-REPOS
-. https://github.com/ytb2mp3/youtube-mp3-downloader
-. https://github.com/leerob/youtube-to-mp3
+	DEPS
+	. ytdl-core - YT dl util. Seems to do everything I want no?
+	. fluent-ffmpeg - some video library
+	. progress-stream - progress tracker (for prog bar)
+	. some kinda queue system (async)
+	. https://www.npmjs.com/package/node-lame - for audio encoding??
+	REPOS
+	. https://github.com/ytb2mp3/youtube-mp3-downloader
+	. https://github.com/leerob/youtube-to-mp3
 */
 
 // only using ytdl && node-fs
@@ -42,7 +42,7 @@ module.exports = (url, cmdName) => {
 		const progPercent = ((current / tot) * 100).toFixed(2)
 		console.log(progPercent + '%')
 	})
-	// info(vid info): get vid-title and pipe stream to fs.writeStream with title
+	// - info(vid info): get vid-title and pipe stream to fs.writeStream with title
 	stream.on('info', (info, format) => {
 		// interesting pieces = format. [quality], info. [title, thumbnail_url]
 		console.log('Found video:', info.title, '@', format.quality, 'quality')
